@@ -61,7 +61,7 @@ return await bcrypt.compare(password,this.password)
 }
 
 userSchema.methods.generateAccessToken= function (){
-jwt.sign({_id:this._id,
+return jwt.sign({_id:this._id,
     email:this.email,
     username:this.username,
     fullName:this.fullName
@@ -73,7 +73,7 @@ process.env.ACCESS_TOKEN_SECRET,
 }
 
 userSchema.methods.generateRefreshToken= function (){
-jwt.sign({_id:this._id,},
+return jwt.sign({_id:this._id,},
 process.env.REFRESH_TOKEN_SECRET,
 {expiresIn:process.env.REFRESH_TOKEN_EXPIRY}
 )
