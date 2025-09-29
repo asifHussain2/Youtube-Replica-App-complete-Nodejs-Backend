@@ -375,7 +375,7 @@ const changeCurrentPassword = asyncHandler(async(req,res)=>{
       }
     ])
 
-    res.status(200).json(new ApiResponse(200,user[0].getWatchHistory,"Watch History fetched successfully"))
+    res.status(200).json(new ApiResponse(200,user[0].watchHistory,"Watch History fetched successfully"))
   })
 
 export { registerUser,loginUser ,logout,refreshAccessToken,changeCurrentPassword,getCurrentUser,updateAccountDetails,updateUserAvatar,updateUserCoverImage,getUserChannelProfile,getWatchHistory};
